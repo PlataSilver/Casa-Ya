@@ -12,7 +12,7 @@ on:
       - .github/workflows/build-client.yml
 
 env:
-  IMAGE_NAME: project-lifomation-client
+  IMAGE_NAME: Casaya-client
 
 jobs:
   # Push image to GitHub Packages.
