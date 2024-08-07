@@ -1,19 +1,15 @@
-# Production Docker Compose file for Lifomation project
 version: "3.8"
 
 services:
-
   client:
     image: ghcr.io/plata/casaya-client:dev
     container_name: angular-client
     expose:
       - 80
     restart: always
-    depends_on:
-      - server
     environment:
-        - VIRTUAL_HOST=Casaya.tech
-        - LETSENCRYPT_HOST=Casaya.tech
+      - VIRTUAL_HOST=Casaya.tech
+      - LETSENCRYPT_HOST=Casaya.tech
 
   nginx-proxy:
     image: jwilder/nginx-proxy
@@ -37,6 +33,5 @@ services:
       - ./html:/usr/share/nginx/html
       - ./acme:/etc/acme.sh
     environment:
-        - NGINX_PROXY_CONTAINER=nginx-proxy
-        - DEFAULT_EMAIL=yashank.bhola@mail.utoronto.ca
-
+      - NGINX_PROXY_CONTAINER=nginx-proxy
+      - DEFAULT_EMAIL=yashank.bhola@mail.utoronto.ca
