@@ -3,7 +3,7 @@ import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { HomeHeaderComponent } from './layout/home-header/header.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { DocViewComponent } from './pages/doc-view/doc-view.component';
+
 import { DocListComponent } from './components/doc-list/doc-list.component';
 import { DocumentsComponent } from './pages/documents/documents.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -27,11 +27,6 @@ export const routes: Routes = [
   {
     path: 'documents',
     component: DocumentsComponent,
-    canActivate: [AuthGuard],
-  },
-  {
-    path: 'documents/:id',
-    component: DocViewComponent,
     canActivate: [AuthGuard],
   },
   {

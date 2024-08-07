@@ -1,0 +1,200 @@
+<home-header-component></home-header-component>
+<div>
+  <section id="hero" class="hero">
+    <div class="container">
+      <h1>Revolutionize Your Rental Experience</h1>
+      <p>Casaya: The safest and most efficient rental marketplace for landlords and tenants</p>
+      <a href="#features" class="cta-button">Explore Features</a>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="container">
+      <h2>Why Choose Casaya</h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <i class="fas fa-file-alt"></i>
+          <h3>Automatic Documentation</h3>
+          <p>Generate location-specific rental documents with ease.</p>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Insurance for Landlords</h3>
+          <p>Optional coverage to minimize risks and maximize peace of mind.</p>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-credit-card"></i>
+          <h3>Secure Online Payments</h3>
+          <p>Hassle-free rent collection through our platform.</p>
+        </div>
+        <div class="feature-item">
+          <i class="fas fa-robot"></i>
+          <h3>AI-Powered Verification</h3>
+          <p>Advanced tenant screening to reduce discrimination and fraud.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="how-it-works">
+    <div class="container">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-number">1</span>
+          <h3>List Your Property</h3>
+          <p>Create a detailed listing with photos and requirements.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">2</span>
+          <h3>Match with Tenants</h3>
+          <p>Our AI matches you with qualified tenants.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">3</span>
+          <h3>Generate Documents</h3>
+          <p>Automatically create legally compliant rental agreements.</p>
+        </div>
+        <div class="step">
+          <span class="step-number">4</span>
+          <h3>Manage Your Rental</h3>
+          <p>Collect rent and handle maintenance requests through our platform.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h2>What Our Users Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <p>"Casaya has simplified my rental process immensely. Highly recommended!"</p>
+          <cite>- John D., Landlord</cite>
+        </div>
+        <div class="testimonial">
+          <p>"Finding an apartment has never been easier. The AI matching is spot on!"</p>
+          <cite>- Sarah M., Tenant</cite>
+        </div>
+        <div class="testimonial">
+          <p>"The automated documentation saved me hours of work. It's a game-changer."</p>
+          <cite>- Michael R., Property Manager</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h2>Transparent Pricing</h2>
+      <div class="pricing-grid">
+        <div class="pricing-plan">
+          <h3>Basic</h3>
+          <p class="price">$19<span>/month</span></p>
+          <ul>
+            <li>Up to 5 listings</li>
+            <li>Basic document generation</li>
+            <li>Online rent collection</li>
+          </ul>
+          <a href="#" class="btn">Choose Plan</a>
+        </div>
+        <div class="pricing-plan featured">
+          <h3>Pro</h3>
+          <p class="price">$49<span>/month</span></p>
+          <ul>
+            <li>Unlimited listings</li>
+            <li>Advanced AI matching</li>
+            <li>Premium document generation</li>
+            <li>Priority support</li>
+          </ul>
+          <a href="#" class="btn">Choose Plan</a>
+        </div>
+        <div class="pricing-plan">
+          <h3>Enterprise</h3>
+          <p class="price">Custom</p>
+          <ul>
+            <li>All Pro features</li>
+            <li>Custom integrations</li>
+            <li>Dedicated account manager</li>
+          </ul>
+          <a href="#" class="btn">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta" class="cta">
+    <div class="container">
+      <h2>Ready to Transform Your Rental Business?</h2>
+      <p>Join thousands of satisfied landlords and tenants using Casaya.</p>
+      <a href="#" class="cta-button">Get Started Now</a>
+    </div>
+  </section>
+
+  <section id="blog-preview" class="blog-preview">
+    <div class="container">
+      <h2>Latest from Our Blog</h2>
+      <div class="blog-grid">
+        <article class="blog-post" *ngFor="let post of blogPosts">
+          <div class="blog-thumbnail">
+            <img [src]="post.image" [alt]="post.title">
+          </div>
+          <div class="blog-content">
+            <h3>{{ post.title }}</h3>
+            <p>{{ post.excerpt }}</p>
+            <a href="#" class="read-more">Read More</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="coming-soon" class="coming-soon">
+    <div class="container">
+      <h2>Coming Soon: Early Access</h2>
+      <!-- <p>Be the first to know when we launch. Sign up for exclusive early access and updates!</p> -->
+      <!-- <form class="signup-form" (ngSubmit)="onSignup()">
+        <input type="email" placeholder="Enter your email" [(ngModel)]="email" name="email" required>
+        <button type="submit" class="signup-button">Get Early Access</button>
+      </form> -->
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Casaya</h3>
+          <p>Casaya is revolutionizing the rental marketplace with AI-powered solutions for landlords and tenants.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#blog-preview">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Email: info&#64;casaya.com</p>
+          <p>Phone: (123) 456-7890</p>
+          <p>Address: 123 Main St, Toronto, ON, Canada</p>
+        </div>
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Casaya. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</div>
