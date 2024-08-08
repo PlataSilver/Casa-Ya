@@ -15,7 +15,7 @@ import { AuthService } from '@auth0/auth0-angular';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
-  title = 'Lifomation';
+  title = 'Casaya';
   features = [
     {
       title: 'Secure Storage',
@@ -74,7 +74,7 @@ export class HomeComponent implements OnInit {
 
   testimonials = [
     {
-      text: 'Lifomation has changed the way I manage my documents.',
+      text: 'casaya has changed the way I manage my documents.',
       author: 'John Doe',
     },
     {
@@ -129,18 +129,18 @@ export class HomeComponent implements OnInit {
       excerpt: 'Discover the advantages of managing your documents digitally.',
     },
     {
-      title: 'Top Features of Lifomation',
+      title: 'Top Features of casaya',
       image: '/blogging.png',
       excerpt:
-        'Explore the top features that make Lifomation the best choice for document management.',
+        'Explore the top features that make casaya the best choice for document management.',
     },
   ];
 
   faqs = [
     {
-      question: 'What is Lifomation?',
+      question: 'What is casaya?',
       answer:
-        'Lifomation is a secure solution for managing and accessing important documents anytime, anywhere.',
+        'casaya is a secure solution for managing and accessing important documents anytime, anywhere.',
     },
     {
       question: 'How do I sign up?',

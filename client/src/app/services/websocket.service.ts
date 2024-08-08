@@ -27,7 +27,7 @@ export class WebSocketService {
   connect(userId: string) {
     this.socket = new WebSocket(
       environment.production
-        ? 'wss://server.lifomation.tech'
+        ? 'wss://server.casaya.tech'
         : 'ws://localhost:3000',
     ); // Use your backend URL
 

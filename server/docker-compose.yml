@@ -5,7 +5,7 @@ version: "3.1"
 services:
   db:
     image: postgres
-    container_name: lifomation-postgres
+    container_name: casaya-postgres
     environment:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
