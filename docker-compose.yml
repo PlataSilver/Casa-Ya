@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   client:
-    image: ghcr.io/plata/casaya-client:main
+    image: nginx:latest
     container_name: angular-client
     ports:
       - "8080:80"
