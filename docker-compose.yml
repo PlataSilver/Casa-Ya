@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   client:
-    image: ghcr.io/plata/casaya-client:dev
+    image: ghcr.io/plata/casaya-client:main
     container_name: angular-client
     expose:
       - 80
