@@ -2,9 +2,7 @@ version: "3.8"
 
 services:
   client:
-    build:
-      context: ./client
-      dockerfile: Dockerfile
+    image: ghcr.io/plata/casaya-client:main
     container_name: angular-client
     ports:
       - "8080:80"
