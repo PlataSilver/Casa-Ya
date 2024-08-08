@@ -2,10 +2,10 @@ version: "3.8"
 
 services:
   client:
-    image: nginx:latest
+    image: ghcr.io/platasilver/casaya-client:main
     container_name: angular-client
-    ports:
-      - "8080:80"
+    expose:
+      - 80
     restart: always
     environment:
       - VIRTUAL_HOST=casaya.live
