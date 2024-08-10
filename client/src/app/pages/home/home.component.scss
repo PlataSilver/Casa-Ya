@@ -64,6 +64,19 @@ section {
     align-items: flex-start;
   }
 
+  .hero-logo {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  @media (max-width: 768px) {
+    .hero-logo {
+      max-width: 200px;
+    }
+  }
+
   h1 {
     font-size: 48px;
     margin: 0 0 20px;
@@ -528,5 +541,61 @@ section {
         border-radius: 4px;
       }
     }
+  }
+}
+
+// Key Offerings Section
+.key-offerings {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.offerings-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.offering-item {
+  flex-basis: 48%;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.offering-content {
+  padding: 2rem;
+}
+
+.offering-item i {
+  font-size: 3rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.offering-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.offering-item p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .offering-item {
+    flex-basis: 100%;
   }
 }
