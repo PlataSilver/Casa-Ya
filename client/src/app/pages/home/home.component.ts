@@ -3,14 +3,15 @@ import { Router, RouterOutlet, RouterModule } from '@angular/router';
 import { HomeHeaderComponent } from '../../layout/home-header/header.component';
 import { CommonModule } from '@angular/common';
 import * as THREE from 'three';
-import { ApiService } from '../../services/api.service';
+// import { ApiService } from '../../services/api.service';
 import { combineLatest } from 'rxjs';
 import { AuthService } from '@auth0/auth0-angular';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterOutlet, HomeHeaderComponent, CommonModule, RouterModule],
+  imports: [RouterOutlet, HomeHeaderComponent, CommonModule, RouterModule, FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -160,32 +161,35 @@ export class HomeComponent implements OnInit {
   ];
 
   constructor(
-    private apiService: ApiService,
+    // private apiService: ApiService,
     private router: Router,
     public auth: AuthService,
   ) {} // Step 2: Inject Router
   userId: string | undefined;
+  name: string = '';
+  email: string = '';  // Add this line to define the email property
 
-  ngOnInit(): void {
-    combineLatest([
-      this.apiService.getUserId(),
-      this.apiService.getUserEmail(),
-    ]).subscribe(
-      ([userId, email]: [string | undefined, string | undefined]) => {
-        if (
-          userId &&
-          userId !== 'Unknown UID' &&
-          email &&
-          email !== 'Unknown Email'
-        ) {
-          this.apiService.createUser(userId, email).subscribe((response) => {
-            this.router.navigate(['/dashboard']);
-          });
-        } else {
-          console.error('User ID or Email not found');
-        }
-      },
-    );
+  ngOnInit() {
+    // Initialize component logic here
+  }
+
+  onSignup() {
+    if (this.name && this.email) {
+      // Here you would typically call an API service to save the user information
+      console.log('Signing up user:', { name: this.name, email: this.email });
+      
+      // For demonstration purposes, we'll just log the information
+      // In a real application, you would send this data to your backend
+      
+      // Reset the form after submission
+      this.name = '';
+      this.email = '';
+      
+      // Show a success message (you can implement a proper notification system)
+      alert('Thank you for signing up! We will contact you soon.');
+    } else {
+      alert('Please enter both name and email.');
+    }
   }
 
   login() {

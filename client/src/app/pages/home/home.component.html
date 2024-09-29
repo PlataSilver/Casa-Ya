@@ -98,12 +98,13 @@
 
   <section id="coming-soon" class="coming-soon">
     <div class="container">
-      <h2>Coming Soon: Early Access</h2>
-      <!-- <p>Be the first to know when we launch. Sign up for exclusive early access and updates!</p> -->
-      <!-- <form class="signup-form" (ngSubmit)="onSignup()">
+      <h2>Sign Up for Early Access</h2>
+      <p>Be the first to know when we launch. Sign up for exclusive early access and updates!</p>
+      <form class="signup-form" (ngSubmit)="onSignup()">
+        <input type="text" placeholder="Enter your name" [(ngModel)]="name" name="name" required>
         <input type="email" placeholder="Enter your email" [(ngModel)]="email" name="email" required>
         <button type="submit" class="signup-button">Get Early Access</button>
-      </form> -->
+      </form>
     </div>
   </section>
 
