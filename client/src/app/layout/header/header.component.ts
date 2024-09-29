@@ -4,12 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 import { AutoCompleteModule } from 'primeng/autocomplete';
-import { UploadComponent } from '../../components/upload/upload.component';
-import { ApiService } from '../../services/api.service';
-import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
-import { WebSocketService } from '../../services/websocket.service';
+// import { UploadComponent } from '../../components/upload/upload.component';
+// import { ApiService } from '../../services/api.service';
+// import { SearchBarComponent } from '../../components/search-bar/search-bar.component';
+// import { WebSocketService } from '../../services/websocket.service';
 import { MessageService } from 'primeng/api';
-import { DataService } from '../../services/data.service';
+// import { DataService } from '../../services/data.service';
 import { ToastModule } from 'primeng/toast';
 
 @Component({
@@ -20,8 +20,6 @@ import { ToastModule } from 'primeng/toast';
     FormsModule,
     CommonModule,
     RouterModule,
-    UploadComponent,
-    SearchBarComponent,
     ToastModule,
   ],
   templateUrl: './header.component.html',
@@ -35,18 +33,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
   userId: string | undefined;
   constructor(
     public auth: AuthService,
-    private apiService: ApiService,
+    // private apiService: ApiService,
     private router: Router,
-    private webSocketService: WebSocketService,
+    // private webSocketService: WebSocketService,
     private messageService: MessageService,
-    private dataService: DataService,
+    // private dataService: DataService,
     private renderer: Renderer2,
   ) {}
 
   ngOnInit() {
-    this.apiService.getUserId().subscribe((userId) => {
-      this.userId = userId;
-    });
+
     this.clickListener = this.renderer.listen(
       'document',
       'click',
@@ -54,54 +50,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
         this.onDocumentClick(event);
       },
     );
-    this.fetchDocumentsNames();
-    this.webSocketService.messages$.subscribe((message) => {
-      if (message && message.type === 'share') {
-        this.messageService.add({
-          key: 'template',
-          severity: 'success',
-          summary: 'Document Shared',
-          detail: `${message.senderEmail} shared a document with you.`,
-        });
-        this.dataService.notifyOther({
-          refresh: true,
-          type: 'share',
-        });
-      } else if (
-        message &&
-        message.type === 'edit' &&
-        this.userId === message.document.ownerId
-      ) {
-        this.messageService.add({
-          key: 'template',
-          severity: 'info',
-          summary: 'Your Document was Updated',
-          detail: `${message.senderEmail} edited ${message.document.document.originalname}.`,
-        });
-      } else if (
-        message &&
-        message.type === 'delete' &&
-        this.userId === message.document.ownerId
-      ) {
-        this.messageService.add({
-          key: 'template',
-          severity: 'warn',
-          summary: 'Your Document was Deleted',
-          detail: `${message.senderEmail} deleted ${message.document.document.originalname}.`,
-        });
-      } else if (
-        message &&
-        message.type === 'add' &&
-        this.userId === message.document.ownerId
-      ) {
-        this.messageService.add({
-          key: 'template',
-          severity: 'info',
-          summary: 'Your Document was Updated',
-          detail: `${message.senderEmail} added a new key to ${message.document.document.originalname}.`,
-        });
-      }
-    });
   }
 
   ngOnDestroy(): void {
@@ -114,16 +62,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.dropdownOpen = !this.dropdownOpen;
   }
 
-  fetchDocumentsNames() {
-    this.apiService.getDocuments().subscribe({
-      next: (res) => {
-        this.items = res.documents;
-      },
-      error: (err) => {
-        console.error(err);
-      },
-    });
-  }
 
   viewDocument(id: number) {
     const doc = this.items?.find((doc) => doc.id === id);

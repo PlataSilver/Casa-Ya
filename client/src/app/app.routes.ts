@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { HomeHeaderComponent } from './layout/home-header/header.component';
 // import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
-import { DocListComponent } from './components/doc-list/doc-list.component';
+// import { DocListComponent } from './components/doc-list/doc-list.component';
 // import { DocumentsComponent } from './pages/documents/documents.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AuthGuard } from '@auth0/auth0-angular';
